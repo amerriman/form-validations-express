@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+  <div class="container">
+
+    <h1>Showing Puppies</h1>
+    <div class="alert alert-success" role="alert">
+    <p>{{success}}<p>
+    </div>
+
+
+    <div class="bs-example" data-example-id="striped-table">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Puppy Name</th>
+          <th>Puppy ID</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for puppy in puppies%}
+        <tr>
+          <td>{{puppy.name}}</td>
+          <td>{{puppy.id}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+
+
+    <!-- for key in object - this is like a 'for in' loop but for swig -->
+    <!-- <ul>
+    {% for puppy in puppies%}
+      <li>{{puppy.name}}</li>
+    {% endfor %}
+    </ul>
+ -->
+  </div>
+
+{% endblock %}
+
+
+<!-- There's an action and an endpoint.  Action is where it goes (page), endpoint is the get request? -->
